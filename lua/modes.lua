@@ -22,24 +22,28 @@ local winhighlight = {
 		CursorLineSign = 'CursorLineSign',
 		CursorLineFold = 'CursorLineFold',
 		Visual = 'Visual',
+		statusline = 'statusline',
 	},
 	copy = {
 		CursorLine = 'ModesCopyCursorLine',
 		CursorLineNr = 'ModesCopyCursorLineNr',
 		CursorLineSign = 'ModesCopyCursorLineSign',
 		CursorLineFold = 'ModesCopyCursorLineFold',
+		statusline = 'ModesCopystatusline',
 	},
 	insert = {
 		CursorLine = 'ModesInsertCursorLine',
 		CursorLineNr = 'ModesInsertCursorLineNr',
 		CursorLineSign = 'ModesInsertCursorLineSign',
 		CursorLineFold = 'ModesInsertCursorLineFold',
+		statusline = 'ModesInsertstatusline',
 	},
 	delete = {
 		CursorLine = 'ModesDeleteCursorLine',
 		CursorLineNr = 'ModesDeleteCursorLineNr',
 		CursorLineSign = 'ModesDeleteCursorLineSign',
 		CursorLineFold = 'ModesDeleteCursorLineFold',
+		statusline = 'ModesDeletestatusline',
 	},
 	visual = {
 		CursorLine = 'ModesVisualCursorLine',
@@ -47,6 +51,7 @@ local winhighlight = {
 		CursorLineSign = 'ModesVisualCursorLineSign',
 		CursorLineFold = 'ModesVisualCursorLineFold',
 		Visual = 'ModesVisualVisual',
+		statusline = 'ModesVisualstatusline',
 	},
 }
 local colors = {}
@@ -139,6 +144,7 @@ M.define = function()
 		utils.set_hl(('Modes%sCursorLineNr'):format(mode), def)
 		utils.set_hl(('Modes%sCursorLineSign'):format(mode), def)
 		utils.set_hl(('Modes%sCursorLineFold'):format(mode), def)
+		utils.set_hl(('Modes%sstatusline'):format(mode), def)
 	end
 
 	utils.set_hl('ModesInsertModeMsg', { fg = colors.insert })
