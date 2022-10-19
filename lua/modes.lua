@@ -10,6 +10,7 @@ local default_config = {
 		insert = 0.15,
 		visual = 0.15,
 	},
+	set_highlight_yank = {highlight = false , timeout = 050},
 	set_cursor = true,
 	set_cursorline = true,
 	set_number = true,
@@ -287,6 +288,16 @@ M.setup = function(opts)
 		pattern = config.ignore_filetypes,
 		callback = M.disable_managed_ui,
 	})
+
+	-- highlight yanked text with the same color as visually selected text
+	if config.set_highlight_yank.highlight then
+		vim.api.nvim_create_autocmd("TextYankPost", {
+			callback = function()
+				vim.highlight.on_yank({ higroup = "ModesCopyCursorLine", timeout = config.set_highlight_yank.timeout })
+			end,
+		})
+	end
+	
 end
 
 return M
