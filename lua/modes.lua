@@ -1,4 +1,5 @@
 local utils = require('modes.utils')
+local math = require("math")
 
 local M = {}
 local config = {}
@@ -192,7 +193,7 @@ M.setup = function(opts)
 			copy = config.line_opacity,
 			delete = config.line_opacity,
 			insert = config.line_opacity,
-			visual = config.line_opacity,
+			visual = math.abs(1-config.line_opacity),
 		}
 	end
 
