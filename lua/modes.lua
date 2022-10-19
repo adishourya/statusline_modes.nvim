@@ -193,7 +193,7 @@ M.setup = function(opts)
 			copy = config.line_opacity,
 			delete = config.line_opacity,
 			insert = config.line_opacity,
-			visual = math.abs(1-config.line_opacity),
+			visual = math.abs(0.5-config.line_opacity),
 		}
 	end
 
